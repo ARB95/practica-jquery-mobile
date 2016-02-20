@@ -23,13 +23,7 @@
 
 	<div data-role="header">
 		<h1>App Notas - Login</h1>
-		<div class="ui-btn-right">
-			<span title="Cambiar tema"  data-rel="dialog" data-transition="fade">Cambiar tema</span>
-			<a title="Savior" class=" ui-btn ui-shadow ui-btn-corner-all  ui-btn-up cambiaTema" value="a">A</a>
-			<a title="Verde" class=" ui-btn ui-shadow ui-btn-corner-all  ui-btn-up cambiaTema" value="b">B</a>
-			<a title="Azul" class=" ui-btn ui-shadow ui-btn-corner-all  ui-btn-up cambiaTema" value="c">C</a>
-			<a title="Default" class=" ui-btn ui-shadow ui-btn-corner-all  ui-btn-up cambiaTema" value="d">D</a>
-		</div>
+		
 	</div><!-- /header -->
 
 	<div data-role="main" class="ui-content">
@@ -54,25 +48,19 @@
 
 	<div data-role="footer">
 		<h4>Practica jQueryMobile App Notas</h4>
+		<div class="ui-btn-right">
+			<span title="Cambiar tema"  data-rel="dialog" data-transition="fade">Cambiar tema</span>
+			<a title="Savior" class=" ui-btn ui-shadow ui-btn-corner-all  ui-btn-up cambiaTema" value="a">A</a>
+			<a title="Verde" class=" ui-btn ui-shadow ui-btn-corner-all  ui-btn-up cambiaTema" value="b">B</a>
+			<a title="Azul" class=" ui-btn ui-shadow ui-btn-corner-all  ui-btn-up cambiaTema" value="c">C</a>
+			<a title="Default" class=" ui-btn ui-shadow ui-btn-corner-all  ui-btn-up cambiaTema" value="d">D</a>
+		</div>
 	</div><!-- /footer -->
 </div><!-- /page -->
 
 	<script src="js/jquery-1.11.1.min.js"></script> 
 	<script src="jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<script src="js/temas.js"></script>
-	<script>
-		$( window ).on( "hashchange", function( event ) {
-			cambiarTema(localStorage.getItem("tema"));
-			
-			$(".cambiaTema").click(function(event){
-		
-				//cambiarTema($(this).attr("value"));
-				cambiarTema($(this).attr("value"));
-			});
-		} );
-		
-		
-	</script>
 	
 </body>
 </html>

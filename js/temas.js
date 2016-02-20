@@ -21,3 +21,12 @@ $(document).ready(function() {
 		cambiarTema($(this).attr("value"));
 	});
 });
+
+$( window ).on( "hashchange", function( event ) {
+			cambiarTema(localStorage.getItem("tema"));
+			
+			$(".cambiaTema").click(function(event){
+		
+				cambiarTema($(this).attr("value"));
+			});
+		} );
