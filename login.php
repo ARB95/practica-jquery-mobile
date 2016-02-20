@@ -4,7 +4,14 @@ require_once('php/DB.php');
 
 session_start();
 
-//if(isset($_SESSION)) header("Location: alumno.php");
+if(isset($_SESSION['usuario'])) {
+	?>
+		<script>
+			window.location.replace("alumno.php");
+		</script>
+			
+	<?php
+}
 
 if (filter_input(INPUT_POST, "acceder")) {
         
@@ -17,7 +24,7 @@ if (filter_input(INPUT_POST, "acceder")) {
             // Comprobamos las credenciales con la base de datos
             if (DB::verificaCliente($usuario, $pass)) {
                 $_SESSION['usuario'] = $usuario;
-				header("Location: alumno.php");                    
+				header("Location: alumno.php");
             }
             else {
                 // Si las credenciales no son válidas, se vuelven a pedir
