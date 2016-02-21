@@ -20,7 +20,7 @@
 
 <div data-role="page" >
 
-	<div data-role="header">
+	<div data-role="header" data-position="fixed">
 		<h1>App Notas - Logoff</h1>
 		
 	</div><!-- /header -->

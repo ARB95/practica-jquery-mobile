@@ -31,7 +31,7 @@
 
 <div data-role="page" >
 
-	<div data-role="header">
+	<div data-role="header" data-position="fixed">
 		<h1>App Notas - Selección de alumno <?php echo $_SERVER["REMOTE_ADDR"];?></h1>
 		<div class="ui-btn-right">
 			<span title="Cerrar sesión"  data-rel="dialog" data-transition="fade">Usuario: <?php echo $_SESSION['usuario']; ?></span>

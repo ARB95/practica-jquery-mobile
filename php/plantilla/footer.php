@@ -1,4 +1,4 @@
-	<div data-role="footer">
+	<div data-role="footer" data-position="fixed">
 		<h4>Practica jQueryMobile App Notas</h4>
 		<div class="ui-btn-right">
 			<span title="Cambiar tema"  data-rel="dialog" data-transition="fade">Cambiar tema</span>
