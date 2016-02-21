@@ -29,4 +29,4 @@ $( window ).on( "hashchange", function( event ) {
 		
 				cambiarTema($(this).attr("value"));
 			});
-		} );
+} );

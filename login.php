@@ -24,7 +24,7 @@ if (filter_input(INPUT_POST, "acceder")) {
             // Comprobamos las credenciales con la base de datos
             if (DB::verificaCliente($usuario, $pass)) {
                 $_SESSION['usuario'] = $usuario;
-				header("Location: alumno.php");
+				header("Location: http://localhost/practica-jquery-mobile/alumno.php");
             }
             else {
                 // Si las credenciales no son válidas, se vuelven a pedir
@@ -54,7 +54,7 @@ if (filter_input(INPUT_POST, "acceder")) {
 	</div><!-- /header -->
 
 	<div data-role="main" class="ui-content">
-		<form class="ui-mini" method="post" action="login.php">
+		<form class="ui-mini" method="post" action="login.php"  data-ajax="false">
 		
 			<h2>Introduce usuario y contraseña:</h2>
 			<?php
@@ -63,11 +63,11 @@ if (filter_input(INPUT_POST, "acceder")) {
 			
 			<div class="ui-field-contain">
 				<label for="usuario">Usuario:</label>
-				<input type="text" name="usuario" id="usuario" value="" data-clear-btn="true"/>
+				<input type="text" name="usuario" id="usuario" placeholder="Usuario..." value="" data-clear-btn="true"/>
 			</div>
 			<div class="ui-field-contain">
 				<label for="pass">Contraseña:</label>
-				<input type="password" name="pass" id="pass" value="" data-clear-btn="true"/>
+				<input type="password" name="pass" id="pass" placeholder="Contraseña..." value="" data-clear-btn="true"/>
 			</div>
 			<div class="ui-field-contain">
 				<input type="submit" name="acceder" id="acceder" value="Acceder" data-clear-btn="true"/>

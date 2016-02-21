@@ -32,15 +32,15 @@
 <div data-role="page" >
 
 	<div data-role="header">
-		<h1>App Notas - Selección de alumno</h1>
+		<h1>App Notas - Selección de alumno <?php echo $_SERVER["REMOTE_ADDR"];?></h1>
 		<div class="ui-btn-right">
-			<span title="Cambiar tema"  data-rel="dialog" data-transition="fade">Usuario: <?php echo $_SESSION['usuario']; ?></span>
+			<span title="Cerrar sesión"  data-rel="dialog" data-transition="fade">Usuario: <?php echo $_SESSION['usuario']; ?></span>
 			<a title="Cierra la sesión" class=" ui-btn ui-shadow ui-btn-corner-all  ui-btn-up" href="logoff.php">Cerrar sesión</a>
 		</div>
 	</div><!-- /header -->
 
 	<div data-role="main" class="ui-content">
-		<form class="ui-mini" method="post" action="alumno.php">
+		<form class="ui-mini" method="post" action="evaluar.php" data-ajax="false">
 		
 			<h2>Elige curso y alumno:</h2>
 			<?php
@@ -57,7 +57,7 @@
 			</div>
 			<div class="ui-field-contain">
 				<label for="alumno" class="select">Alumno:</label>
-				<select name="alumno" id="curso" data-native-menu="false">
+				<select name="alumno" id="alumno" data-native-menu="false">
 					<option>Elige un alumno...</option>
 					<option value="dam">Pepe</option>
 					<option value="daw">Juan</option>
@@ -69,6 +69,7 @@
 			</div>
 			
 		</form>
+		
 		
 	</div><!-- /content -->
 	
