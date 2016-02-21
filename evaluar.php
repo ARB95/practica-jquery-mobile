@@ -31,13 +31,15 @@
 
 <div data-role="page" >
 
-	<div data-role="header" data-position="fixed">
+	<div data-role="header" data-position="fixed" >
 		<h1>App Notas - Evaluar alumno</h1>
+		<br/>
 		<div class="ui-btn-right">
 			<span title="Cerrar sesión"  data-rel="dialog" data-transition="fade">Usuario: <?php echo $_SESSION['usuario']; ?></span>
+			<br/>
 			<a title="Cierra la sesión" class=" ui-btn ui-shadow ui-btn-corner-all  ui-btn-up" href="logoff.php">Cerrar sesión</a>
 		</div>
-		<form class="ui-btn-left ui-mini" method="post" action="alumno.php">
+		<form class="ui-btn-left" method="post" action="alumno.php">
 				<input title="Cancelar y volver a la selección de alumno" type="submit" name="cancelar" id="cancelar" value="Cancelar" data-clear-btn="true"/>
 		</form>
 	</div><!-- /header -->

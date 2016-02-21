@@ -24,7 +24,7 @@
 	<title>App Notas - Selección de alumno</title>
 
 	<?php require_once 'php/plantilla/head.php'; ?>
-	
+
 </head>
 
 <body>
@@ -32,9 +32,11 @@
 <div data-role="page" >
 
 	<div data-role="header" data-position="fixed">
-		<h1>App Notas - Selección de alumno <?php echo $_SERVER["REMOTE_ADDR"];?></h1>
+		<h1>App Notas - Selección de alumno</h1>
+		<br/>
 		<div class="ui-btn-right">
 			<span title="Cerrar sesión"  data-rel="dialog" data-transition="fade">Usuario: <?php echo $_SESSION['usuario']; ?></span>
+			<br/>
 			<a title="Cierra la sesión" class=" ui-btn ui-shadow ui-btn-corner-all  ui-btn-up" href="logoff.php">Cerrar sesión</a>
 		</div>
 	</div><!-- /header -->
