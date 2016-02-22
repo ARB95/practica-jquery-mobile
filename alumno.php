@@ -43,7 +43,9 @@
 
 	<div data-role="main" class="ui-content">
 		<form class="ui-mini" method="post" action="evaluar.php" data-ajax="false">
-		
+			
+			<label style="color:red" class="error"></label>
+			
 			<h2>Elige curso y alumno:</h2>
 			<?php
 				if (isset($error)) echo "<h4 style='color:red'>$error</h4>";
@@ -51,7 +53,7 @@
 			<div class="ui-field-contain">		
 				<label for="curso" class="select">Curso:</label>
 				<select name="curso" id="curso" data-native-menu="false">
-					<option>Elige un curso...</option>
+					<option value="-1">Elige un curso...</option>
 					<option value="dam">DAM</option>
 					<option value="daw">DAW</option>
 					<option value="asir">ASIR</option>
@@ -60,10 +62,10 @@
 			<div class="ui-field-contain">
 				<label for="alumno" class="select">Alumno:</label>
 				<select name="alumno" id="alumno" data-native-menu="false">
-					<option>Elige un alumno...</option>
-					<option value="dam">Pepe</option>
-					<option value="daw">Juan</option>
-					<option value="asir">María</option>
+					<option value="-1">Elige un alumno...</option>
+					<option value="Pepe">Pepe</option>
+					<option value="Juan">Juan</option>
+					<option value="María">María</option>
 				</select>
 			</div>
 			<div class="ui-field-contain">

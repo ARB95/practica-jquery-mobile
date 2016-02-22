@@ -15,7 +15,11 @@
 			
 			<?php
 		}
-
+		
+		if(filter_input(INPUT_POST, "acceder")){
+			$_SESSION['alumno'] = filter_input(INPUT_POST, "alumno");
+			$_SESSION['curso'] = filter_input(INPUT_POST, "curso");
+		}
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +49,11 @@
 	</div><!-- /header -->
 
 	<div data-role="main" class="ui-content">
-		<form class="ui-mini" method="post" action="alumno.php" data-ajax="false">
+	
+		<label>Alumno: <?php echo $_SESSION['alumno']; ?> / Curso: <?php echo $_SESSION['curso'] ?></label>
+		<hr/>
+		
+		<form class="ui-mini" method="post" action="nota.php" data-ajax="false">
 		
 			<fieldset data-role="collapsible">
 				<legend title="Contenido del proyecto - 65% de la nota">Contenido del proyecto - 65%</legend>
@@ -68,13 +76,13 @@
 				<legend title="Calidad de la presentación - 10% de la nota">Calidad de la presentación - 10%</legend>
 				
 				<label title="Presentación escrita" for="presentacion">Presentación escrita:</label>
-				<input name="presentacion" id="presentacion" value="5" min="0" max="10" data-highlight="true" type="range" title="Presentación escrita" class="contenido"/>
+				<input name="presentacion" id="presentacion" value="5" min="0" max="10" data-highlight="true" type="range" title="Presentación escrita" class="planteamiento"/>
 				
 				<label title="Redacción y claridad del texto" for="redaccion">Redacción y claridad del texto:</label>
-				<input name="redaccion" id="redaccion" value="5" min="0" max="10" data-highlight="true" type="range" title="Redacción y claridad del texto" class="contenido"/>
+				<input name="redaccion" id="redaccion" value="5" min="0" max="10" data-highlight="true" type="range" title="Redacción y claridad del texto" class="planteamiento"/>
 				
 				<label title="Organización del contenido" for="organizacion">Organización del contenido:</label>
-				<input name="organizacion" id="organizacion" value="5" min="0" max="10" data-highlight="true" type="range" title="Organización del contenido" class="contenido"/>
+				<input name="organizacion" id="organizacion" value="5" min="0" max="10" data-highlight="true" type="range" title="Organización del contenido" class="planteamiento"/>
 				
 				<hr/>
 				<label id="totalPlanteamiento">Total: xx</label>
@@ -157,10 +165,19 @@
 				<label id="totalExpresion">Total: xx</label>
 				
 			</fieldset>
-	
+
+			<hr/>
+			
+			<label id="nota">Nota final: xx</label>
+			<input type="hidden" name="nota" id="notaFinal"  data-clear-btn="true"/>
+			
+			<hr/>
+				
 			<div class="ui-field-contain">
 				<input type="submit" name="evaluar" id="evaluar" value="Evaluar" data-clear-btn="true"/>
 			</div>
+
+			
 			
 		</form>
 		
@@ -173,6 +190,7 @@
 	<script src="js/jquery-1.11.1.min.js"></script> 
 	<script src="jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<script src="js/temas.js"></script>
+	<script src="js/calcularNotas.js"></script>
 	
 </body>
 </html>

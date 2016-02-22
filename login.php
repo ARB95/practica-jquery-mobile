@@ -24,7 +24,7 @@ if (filter_input(INPUT_POST, "acceder")) {
             // Comprobamos las credenciales con la base de datos
             if (DB::verificaCliente($usuario, $pass)) {
                 $_SESSION['usuario'] = $usuario;
-				header("Location: http://localhost/practica-jquery-mobile/alumno.php");
+				header("Location: alumno.php");
             }
             else {
                 // Si las credenciales no son válidas, se vuelven a pedir
